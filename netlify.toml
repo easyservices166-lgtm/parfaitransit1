@@ -1,4 +1,6 @@
 [build]
+  base = "."
+  command = "echo 'Static HTML site - no build step required'"
   publish = "."
 
 [[headers]]
