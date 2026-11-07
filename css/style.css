@@ -98,3 +98,8 @@
 /* Lower media bandwidth: images lazy-load and videos fetch only after play */
 .media-visual img{content-visibility:auto}
 .media-visual video{object-fit:contain}
+
+/* Original PARFAITRANSIT brand logo */
+.brand img{width:82px;height:82px;object-fit:contain;flex:0 0 auto;border-radius:8px;background:#fff}
+.footer .brand img{width:76px;height:76px}
+@media(max-width:640px){.brand img{width:54px;height:54px}.footer .brand img{width:58px;height:58px}}
