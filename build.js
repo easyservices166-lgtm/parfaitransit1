@@ -1,11 +1,14 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const output = path.join(__dirname, "dist");
+const { execFileSync } = require("node:child_process");
+const root = __dirname;
+const output = path.join(root, "dist");
 fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
-for (const item of ["index.html", "css", "js", "img", "media", "media-data.js"]) {
-  const source = path.join(__dirname, item);
-  if (!fs.existsSync(source)) throw new Error("Required site file or folder is missing: " + item);
-  fs.cpSync(source, path.join(output, item), { recursive: true });
+for (const item of ["index.html", "css", "js", "img", "media-data.js", "media"]) {
+  const source = path.join(root, item);
+  if (fs.existsSync(source)) fs.cpSync(source, path.join(output, item), { recursive: true });
 }
-console.log("PARFAITRANSIT: production site copied to dist/");
+const packs = fs.readdirSync(root).filter(name => /^PARFAITRANSIT_MEDIA_PACK_0[1-3]\\.zip$/.test(name)).sort();
+for (const pack of packs) execFileSync("unzip", ["-oq", path.join(root, pack), "-d", output]);
+console.log(`PARFAITRANSIT: production site copied to dist/ (${packs.length} media packs extracted)`);
