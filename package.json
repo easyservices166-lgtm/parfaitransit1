@@ -1,0 +1,8 @@
+{
+  "name": "parfaitransit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node -e \"console.log('PARFAITRANSIT: static site ready for Netlify')\""
+  }
+}
