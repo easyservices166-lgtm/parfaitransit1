@@ -1,5 +1,6 @@
 [build]
-  command = ""
+  # Plain HTML/CSS/JS site: no framework or compilation step.
+  command = "echo 'PARFAITRANSIT: static site, no build required'"
   publish = "."
 
 [[headers]]
