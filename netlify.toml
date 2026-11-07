@@ -1,6 +1,6 @@
 [build]
-  # Plain HTML/CSS/JS site: no compilation is required.
-  command = "echo 'PARFAITRANSIT: static site, no build required'"
+  base = "."
+  command = "npm run build"
   publish = "."
 
 [[headers]]
