@@ -1,8 +1,8 @@
 {
   "name": "parfaitransit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
-    "build": "node -e \"console.log('PARFAITRANSIT: static HTML site ready')\""
+    "build": "node build.js"
   }
 }
