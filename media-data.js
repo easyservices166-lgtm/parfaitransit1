@@ -1,12 +1,18 @@
-window.PT_MEDIA = {
-  photos: [
-    ["vehicles","Chargement de véhicules"],["vehicles","Expédition en conteneur"],["vehicles","Transport automobile"],["logistics","Préparation des marchandises"],
-    ["logistics","Opérations logistiques"],["vehicles","Toyota Hilux · Export"],["vehicles","Chargement sur plateau"],["vehicles","Transport de camion"],
-    ["logistics","Équipements et fret"],["logistics","Chargement maritime"],["shipping","Bateau · Transport"],["shipping","Arrimage de véhicules"],
-    ["shipping","Expédition automobile"],["vehicles","Véhicule en conteneur"],["vehicles","Chargement sécurisé"],["vehicles","Opération de chargement"]
-  ].map((p,i)=>({type:"photo",category:p[0],src:"media/photos/photo-"+String(i+1).padStart(2,"0")+".jpg",title:p[1]})),
-  videos: Array.from({length:31},(_,i)=>{
-    const n=i+1, category=["vehicles","shipping","logistics"][(n-1)%3];
-    return {type:"video",category,src:"media/videos/video-"+String(n).padStart(2,"0")+".mp4",poster:"media/posters/video-"+String(n).padStart(2,"0")+".jpg",title:(category==="vehicles"?"Opération de chargement automobile ":category==="shipping"?"Expédition et transport maritime ":"Opération logistique ")+String(n).padStart(2,"0")};
-  })
-};
+window.PT_MEDIA={photos:[
+{type:"photo",category:"vehicles",src:"media/photos/photo-01.jpg",title:"Chargement de véhicules"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-02.jpg",title:"Expédition en conteneur"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-03.jpg",title:"Transport automobile"},
+{type:"photo",category:"logistics",src:"media/photos/photo-04.jpg",title:"Préparation des marchandises"},
+{type:"photo",category:"logistics",src:"media/photos/photo-05.jpg",title:"Opérations logistiques"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-06.jpg",title:"Toyota Hilux · Export"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-07.jpg",title:"Chargement sur plateau"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-08.jpg",title:"Transport de camion"},
+{type:"photo",category:"logistics",src:"media/photos/photo-09.jpg",title:"Équipements et fret"},
+{type:"photo",category:"logistics",src:"media/photos/photo-10.jpg",title:"Chargement maritime"},
+{type:"photo",category:"shipping",src:"media/photos/photo-11.jpg",title:"Bateau · Transport"},
+{type:"photo",category:"shipping",src:"media/photos/photo-12.jpg",title:"Arrimage de véhicules"},
+{type:"photo",category:"shipping",src:"media/photos/photo-13.jpg",title:"Expédition automobile"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-14.jpg",title:"Véhicule en conteneur"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-15.jpg",title:"Chargement sécurisé"},
+{type:"photo",category:"vehicles",src:"media/photos/photo-16.jpg",title:"Opération de chargement"}],
+videos:Array.from({length:31},(_,i)=>{const n=i+1,categories=["vehicles","shipping","logistics"];const category=categories[(n-1)%3];const num=String(n).padStart(2,"0");return{type:"video",category,src:"media/videos/video-"+num+".mp4",poster:"media/posters/video-"+num+".jpg",title:(category==="vehicles"?"Opération de chargement automobile ":category==="shipping"?"Expédition et transport maritime ":"Opération logistique ")+num}})};
