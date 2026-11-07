@@ -9,6 +9,6 @@ for (const item of ["index.html", "css", "js", "img", "media-data.js", "media"])
   const source = path.join(root, item);
   if (fs.existsSync(source)) fs.cpSync(source, path.join(output, item), { recursive: true });
 }
-const packs = fs.readdirSync(root).filter(name => /^PARFAITRANSIT_MEDIA_PACK_0[1-3]\\.zip$/.test(name)).sort();
+const packs = fs.readdirSync(root).filter(name => name.startsWith("PARFAITRANSIT_MEDIA_PACK_") && name.endsWith(".zip")).sort();
 for (const pack of packs) execFileSync("unzip", ["-oq", path.join(root, pack), "-d", output]);
 console.log(`PARFAITRANSIT: production site copied to dist/ (${packs.length} media packs extracted)`);
